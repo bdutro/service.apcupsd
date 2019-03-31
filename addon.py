@@ -26,12 +26,12 @@ EXE_FILES = ['/etc/apcupsd/apccontrol',
 
 FULL_PATH_EXE_FILES = [os.path.join(__addondir__, 'resources/lib/apcupsd', f) for f in EXE_FILES]
 
-def __set_executable(f):
+def set_executable(f):
     st = os.stat(f)
     if not (st.st_mode & stat.S_IEXEC):
         os.chmod(f, st.st_mode | stat.S_IEXEC)
 
-def __check_files():
+def check_files():
     if not os.path.exists(LOCKFILE_PATH):
         os.makedirs(LOCKFILE_PATH)
     if not os.path.exists(APCUPSD_CONF_PATH):
@@ -39,7 +39,7 @@ def __check_files():
             os.makedirs(__userdir__)
         shutil.copyfile(APCUPSD_EXAMPLE_CONF_PATH, APCUPSD_CONF_PATH)
     for f in FULL_PATH_EXE_FILES:
-        __set_executable(f)
+        set_executable(f)
 
 class ApcupsdInstance(object):
     def __init__(self, bin_path, conf_path):
@@ -49,7 +49,7 @@ class ApcupsdInstance(object):
         self.pid = None
 
     def start(self):
-        __check_files()
+        check_files()
         if not self.started:
             self.pid = subprocess.Popen([self.bin_path, '-f', self.conf_path])
 
