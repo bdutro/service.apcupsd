@@ -24,6 +24,8 @@ class ApcupsdInstance(object):
         if not os.path.exists(LOCKFILE_PATH):
             os.makedirs(LOCKFILE_PATH)
         if not os.path.exists(APCUPSD_CONF_PATH):
+            if not os.path.exists(__userdir__):
+                os.makedirs(__userdir__)
             shutil.copyfile(APCUPSD_EXAMPLE_CONF_PATH, APCUPSD_CONF_PATH)
         if not self.started:
             self.pid = subprocess.Popen([self.bin_path, '-f', self.conf_path])
