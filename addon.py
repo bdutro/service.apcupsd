@@ -11,7 +11,7 @@ __userdir__ = xbmc.translatePath(__addon__.getAddonInfo('profile'))
 APCUPSD_BIN_PATH = os.path.join(__addondir__, 'resources/lib/apcupsd/sbin/apcupsd')
 APCUPSD_CONF_PATH = os.path.join(__userdir__, 'apcupsd.conf')
 LOCKFILE_PATH = '/run/apcupsd'
-APCUPSD_EXAMPLE_CONF_PATH = os.path.join(__addondir__, 'resources/lib/apcupsd/etc/apcupsd.conf')
+APCUPSD_EXAMPLE_CONF_PATH = os.path.join(__addondir__, 'resources/lib/apcupsd/etc/apcupsd/apcupsd.conf')
 
 class ApcupsdInstance(object):
     def __init__(self, bin_path, conf_path):
