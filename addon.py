@@ -13,16 +13,16 @@ APCUPSD_BIN_PATH = os.path.join(__addondir__, 'resources/lib/apcupsd/sbin/apcups
 APCUPSD_CONF_PATH = os.path.join(__userdir__, 'apcupsd.conf')
 LOCKFILE_PATH = '/run/apcupsd'
 APCUPSD_EXAMPLE_CONF_PATH = os.path.join(__addondir__, 'resources/lib/apcupsd/etc/apcupsd/apcupsd.conf')
-EXE_FILES = ['/etc/apcupsd/apccontrol',
-             '/etc/apcupsd/changeme',
-             '/etc/apcupsd/commfailure',
-             '/etc/apcupsd/commok',
-             '/etc/apcupsd/offbattery',
-             '/etc/apcupsd/onbattery',
-             '/sbin/apcaccess',
-             '/sbin/apctest',
-             '/sbin/apcupsd',
-             '/sbin/smtp']
+EXE_FILES = ['etc/apcupsd/apccontrol',
+             'etc/apcupsd/changeme',
+             'etc/apcupsd/commfailure',
+             'etc/apcupsd/commok',
+             'etc/apcupsd/offbattery',
+             'etc/apcupsd/onbattery',
+             'sbin/apcaccess',
+             'sbin/apctest',
+             'sbin/apcupsd',
+             'sbin/smtp']
 
 FULL_PATH_EXE_FILES = [os.path.join(__addondir__, 'resources/lib/apcupsd', f) for f in EXE_FILES]
 
