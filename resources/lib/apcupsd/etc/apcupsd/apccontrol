@@ -15,14 +15,14 @@
 #
 # These variables are needed for set up the autoconf other variables.
 #
-prefix=/usr
+prefix=/storage/.kodi/addons/service.apcupsd/resources/lib/apcupsd
 exec_prefix=${prefix}
 
 APCPID=/var/run/apcupsd.pid
-APCUPSD=/usr/bin/apcupsd
-SHUTDOWN=/usr/bin/shutdown
+APCUPSD=$exec_prefix/sbin/apcupsd
+SHUTDOWN=/usr/sbin/shutdown
 SCRIPTSHELL=/usr/bin/sh
-SCRIPTDIR=/etc/apcupsd
+SCRIPTDIR=$exec_prefix/etc/apcupsd
 WALL=wall
 
 export SYSADMIN=root
